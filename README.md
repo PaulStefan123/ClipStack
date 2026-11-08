@@ -41,6 +41,14 @@ Requires **macOS 13 Ventura or later**. Runs natively on Apple Silicon and Intel
    `/Applications`. You can toggle this in menu bar icon › **Settings…**, or in
    **System Settings › General › Login Items**.
 
+## Install from GitHub
+
+```bash
+git clone https://github.com/PaulStefan123/ClipStack.git
+cd ClipStack
+./install.sh
+```
+
 ## Install from source (one command)
 
 Building ClipStack on your own Mac avoids the "unidentified developer" warning entirely.
