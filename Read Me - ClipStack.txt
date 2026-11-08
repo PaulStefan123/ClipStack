@@ -1,0 +1,145 @@
+CLIPSTACK
+A small clipboard manager for your Mac
+======================================
+
+ClipStack remembers the last 10 things you copied, so you can paste any of them
+again with a single shortcut.
+
+  ⌘C           Copy as usual. ClipStack saves it automatically.
+  ⌥⌘V          Open the clipboard list (Option + Command + V).
+  ↑ / ↓        Move through the list.
+  Return       Paste the selected item into the app you're using.
+  1–9, 0       Paste that row straight away.
+  Delete       Remove the selected item from the list.
+  Esc          Close the list. Clicking anywhere else closes it too.
+
+ClipStack lives in the menu bar (the clipboard icon at the top of your screen).
+It has no Dock icon and starts automatically when you log in.
+
+Requirements: macOS 13 (Ventura) or newer. It works on both Apple Silicon and Intel Macs.
+
+
+INSTALLING (about 2 minutes)
+----------------------------
+
+1. Install the app
+
+   Double-click the zip file if it isn't unzipped yet.
+   Drag ClipStack.app into your Applications folder.
+
+2. Let macOS open it
+
+   ClipStack doesn't come from the App Store, so macOS blocks it
+   the first time. Pick one of these options:
+
+   Option A (Terminal, quickest):
+     Open Terminal (press ⌘ Space, type "Terminal", then press Return),
+     paste this line, and press Return:
+
+       xattr -dr com.apple.quarantine /Applications/ClipStack.app
+
+   Option B (System Settings):
+     Double-click ClipStack in Applications and click "Done" on the warning.
+     Then open System Settings › Privacy & Security, scroll down,
+     click "Open Anyway" next to ClipStack, and confirm.
+
+3. Open ClipStack
+
+   Double-click ClipStack in your Applications folder.
+   A clipboard icon appears in the menu bar at the top right of your screen.
+
+4. Allow it to paste for you (important)
+
+   macOS will say "ClipStack would like to control this computer using
+   accessibility features". Click "Open System Settings" and turn on the
+   switch next to ClipStack.
+
+   If you missed the prompt, go to:
+     System Settings › Privacy & Security › Accessibility
+   and turn on ClipStack. If it isn't listed, click "+" and choose
+   Applications › ClipStack.
+
+   Then quit ClipStack (menu bar icon › Quit ClipStack) and open it again.
+
+   ClipStack only uses this permission to press ⌘V for you when you hit
+   Return. Without it, Return still copies the item, and you press ⌘V yourself.
+
+5. Done
+
+   Copy a few things, click into any text field, and press ⌥⌘V.
+
+
+SETTINGS
+--------
+
+Click the menu bar icon › Settings… to:
+
+  • Change the keyboard shortcut. Click the shortcut, then press the new
+    combination. It must include ⌘, ⌥ or ⌃.
+  • Turn "Open ClipStack at login" on or off.
+  • Choose how long copies are kept: 1 hour, 1 day, 1 week, 30 days, or
+    until newer copies replace them.
+
+To wipe the list, use the menu bar icon › Clear History.
+
+
+PRIVACY
+-------
+
+Everything stays on your Mac. ClipStack never connects to the internet.
+It keeps your last 10 text copies in a file that only your user account can read:
+  ~/Library/Application Support/ClipStack/history.json
+
+It doesn't record items that password managers mark as private (1Password,
+Bitwarden, Apple Passwords and others).
+
+
+TROUBLESHOOTING
+---------------
+
+"ClipStack can't be opened" or "unidentified developer"
+  → Do step 2 above.
+
+The "would like to control this computer" message keeps appearing,
+even though ClipStack is turned on in Accessibility
+  → This usually happens after an update. Go to System Settings ›
+    Privacy & Security › Accessibility, select ClipStack, and click "–"
+    to remove it. Then click "+", add Applications › ClipStack again, and
+    turn it on. Quit ClipStack and open it again.
+
+Return closes the list but nothing gets pasted
+  → Same fix as above: check the Accessibility permission.
+
+⌥⌘V does nothing
+  → Another app is probably using that shortcut. Choose a different one
+    in Settings.
+
+Finder's "Move Item Here" (⌥⌘V) no longer works
+  → ClipStack uses that shortcut. Use Edit › Move Item Here in Finder
+    instead, or give ClipStack another shortcut in Settings.
+
+It didn't start after restarting the Mac
+  → Check that "Open ClipStack at login" is on in Settings, and that
+    ClipStack is allowed in System Settings › General › Login Items.
+
+
+UPDATING
+--------
+
+Quit ClipStack from the menu bar, replace ClipStack.app in Applications
+with the new one, and repeat steps 2–4.
+
+
+UNINSTALLING
+------------
+
+1. Open Settings and turn off "Open ClipStack at login".
+2. Quit ClipStack from the menu bar.
+3. Drag ClipStack.app from Applications to the Bin (Trash).
+4. Optional: remove the saved history by deleting the folder
+   ~/Library/Application Support/ClipStack
+   (In Finder, choose Go › Go to Folder… and paste that path.)
+
+
+Good to know: ClipStack saves plain text only. Images, files and
+formatting (bold, colours) aren't kept.
